@@ -81,31 +81,6 @@
   programs = {
     xwayland.enable = true;
     dconf.enable = true;
-    fish.enable = true;
-    niri.enable = true;
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    gamemode.enable = true;
-    # Digital distribution platform
-    steam = {
-      enable = true;
-
-      # open firewall ports for local streaming/multiplayer
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
-
-      /*
-      # fix for steam's ui on high-res
-      package = pkgs.steam.override {
-        extraEnv = {
-          STEAM_FORCE_DESKTOPUI_SCALING = "1";
-        };
-      };
-      */
-    };
   };
 
   # packages & env
