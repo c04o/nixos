@@ -10,6 +10,7 @@
     (inputs.import-tree ./desktop)
     (inputs.import-tree ./terminal)
     (inputs.import-tree ./dev)
+    (inputs.import-tree ./gaming)
   ];
 
   home = {
