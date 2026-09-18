@@ -19,8 +19,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # another game launcher
+    # game launchers
     heroic
+    lutris
 
     # manage proton via tui
     protonup-rs
