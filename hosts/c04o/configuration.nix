@@ -97,12 +97,14 @@
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
 
+      /*
       # fix for steam's ui on high-res
       package = pkgs.steam.override {
         extraEnv = {
           STEAM_FORCE_DESKTOPUI_SCALING = "1";
         };
       };
+      */
     };
   };
 

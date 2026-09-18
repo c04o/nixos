@@ -37,7 +37,7 @@
       }
 
       layout {
-          gaps 4
+          gaps 0
           center-focused-column "never"
 
           default-column-width { proportion 0.5; }
@@ -49,7 +49,7 @@
           }
 
           border {
-              width 1.4
+              width 1.5
               active-color "#cba6f7"
               inactive-color "#585b70"
           }
@@ -90,7 +90,7 @@
       }
 
       window-rule {
-          geometry-corner-radius 8.0 8.0 8.0 8.0
+          geometry-corner-radius 12
           clip-to-geometry true
       }
       window-rule {
