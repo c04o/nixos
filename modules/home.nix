@@ -33,7 +33,6 @@
       mpv
       nautilus
       pavucontrol
-      protonup-rs
       ripgrep
       yazi
       zathura
