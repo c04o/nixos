@@ -81,6 +81,23 @@
   programs = {
     xwayland.enable = true;
     dconf.enable = true;
+
+    # temporarily omptimize when launching games
+    gamemode.enable = true;
+
+    steam = {
+      enable = true;
+
+      # open firewall ports for local streaming/multiplayer
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+
+      extraCompatPackages = with pkgs; [
+        # default proton
+        proton-ge-bin
+      ];
+    };
   };
 
   # packages & env
