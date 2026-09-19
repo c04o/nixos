@@ -81,6 +81,8 @@
   programs = {
     xwayland.enable = true;
     dconf.enable = true;
+    niri.enable = true;
+    fish.enable = true;
 
     # temporarily omptimize when launching games
     gamemode.enable = true;
