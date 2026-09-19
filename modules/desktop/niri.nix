@@ -7,10 +7,10 @@
           ELECTRON_OZONE_PLATFORM_HINT "auto"
       }
 
-      # to GPG entropy
+      // to GPG entropy
       spawn-at-startup "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
 
-      # propagate environment to systemd so dms launches steam correctly (maybe?)
+      // propagate environment to systemd so dms launches steam correctly (maybe?)
       spawn-at-startup "systemctl" "--user" "import-environment" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 
       spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
