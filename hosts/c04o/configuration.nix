@@ -104,12 +104,10 @@
 
   # packages & env
   nixpkgs = {
-    # allow # allow propietary software (ew)
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        # i need downgrade xwayland-satellite so steam works
-        xwayland-satellite = prev.xwayland-satellite.overrideAttrs (oldAttrs: rec {
+        xwayland-satellite = prev.xwayland-satellite.overrideAttrs (oa: rec {
           version = "0.8.1";
           src = prev.fetchFromGitHub {
             owner = "Supreeeme";
@@ -117,7 +115,10 @@
             rev = "v${version}";
             hash = "sha256-BUE41HjLIGPjq3U8VXPjf8asH8GaMI7FYdgrIHKFMXA=";
           };
-          cargoHash = "sha256-16L6gsvze+m7XCJlOA1lsPNELE3D364ef2FTdkh0rVY=";
+          cargoDeps = final.rustPlatform.fetchCargoVendor {
+            inherit src;
+            hash = "sha256-16L6gsvze+m7XCJlOA1lsPNELE3D364ef2FTdkh0rVY=";
+          };
         });
       })
     ];
