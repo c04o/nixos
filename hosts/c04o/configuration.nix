@@ -81,14 +81,12 @@
   programs = {
     xwayland.enable = true;
     dconf.enable = true;
-    fish.enable = true;
     niri.enable = true;
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+    fish.enable = true;
+
+    # temporarily omptimize when launching games
     gamemode.enable = true;
-    # Digital distribution platform
+
     steam = {
       enable = true;
 
@@ -97,23 +95,37 @@
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
 
-      /*
-      # fix for steam's ui on high-res
-      package = pkgs.steam.override {
-        extraEnv = {
-          STEAM_FORCE_DESKTOPUI_SCALING = "1";
-        };
-      };
-      */
+      extraCompatPackages = with pkgs; [
+        # default proton
+        proton-ge-bin
+      ];
     };
   };
 
   # packages & env
-  # allow propietary software (ew)
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      (final: prev: {
+        xwayland-satellite = prev.xwayland-satellite.overrideAttrs (oa: rec {
+          version = "0.8.1";
+          src = prev.fetchFromGitHub {
+            owner = "Supreeeme";
+            repo = "xwayland-satellite";
+            rev = "v${version}";
+            hash = "sha256-BUE41HjLIGPjq3U8VXPjf8asH8GaMI7FYdgrIHKFMXA=";
+          };
+          cargoDeps = final.rustPlatform.fetchCargoVendor {
+            inherit src;
+            hash = "sha256-16L6gsvze+m7XCJlOA1lsPNELE3D364ef2FTdkh0rVY=";
+          };
+        });
+      })
+    ];
+  };
   # global packages
   environment.systemPackages = with pkgs; [
+    xwayland-satellite
     # This program allows you read and control device brightness
     brightnessctl
 
@@ -147,13 +159,9 @@
     ];
     substituters = [
       "https://cache.nixos.org/"
-      "https://niri.cachix.org"
-      "https://noctalia.cachix.org"
     ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
 

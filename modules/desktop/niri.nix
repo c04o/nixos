@@ -5,11 +5,14 @@
 
       environment {
           ELECTRON_OZONE_PLATFORM_HINT "auto"
-          DISPLAY ":0"
       }
 
+      // to GPG entropy
       spawn-at-startup "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
-      spawn-at-startup "${pkgs.xwayland-satellite}/bin/xwayland-satellite"
+
+      // propagate environment to systemd so dms launches steam correctly (maybe?)
+      spawn-at-startup "systemctl" "--user" "import-environment" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+
       spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
       spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
@@ -93,10 +96,12 @@
           geometry-corner-radius 12
           clip-to-geometry true
       }
+
       window-rule {
-          match app-id="steam" title="^notificationtoasts_\\d+_desktop$"
+          match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
           default-floating-position x=10 y=10 relative-to="bottom-right"
       }
+
       window-rule {
           match app-id="^(firefox|helium.*)$" title="^Picture-in-Picture$"
           open-floating true

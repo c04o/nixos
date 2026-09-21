@@ -28,4 +28,4 @@ Thanks to the amazing people whose work make my desktop possible
 ## License
 
 The source files in this repository are licensed under the
-[MIT No Attribution License](LICENSE).
+[MIT License](LICENSE).
