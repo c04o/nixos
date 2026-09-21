@@ -124,6 +124,7 @@
   };
   # global packages
   environment.systemPackages = with pkgs; [
+    xwayland-satellite
     # This program allows you read and control device brightness
     brightnessctl
 
