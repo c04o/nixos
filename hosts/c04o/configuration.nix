@@ -103,9 +103,25 @@
   };
 
   # packages & env
-  # allow propietary software (ew)
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs = {
+    # allow # allow propietary software (ew)
+    config.allowUnfree = true;
+    overlays = [
+      (final: prev: {
+        # i need downgrade xwayland-satellite so steam works
+        xwayland-satellite = prev.xwayland-satellite.overrideAttrs (oldAttrs: rec {
+          version = "0.8.1";
+          src = prev.fetchFromGitHub {
+            owner = "Supreeeme";
+            repo = "xwayland-satellite";
+            rev = "v${version}";
+            hash = "sha256-1111111111111111111111111111111111111111111=";
+          };
+          cargoHash = "sha256-2222222222222222222222222222222222222222222=";
+        });
+      })
+    ];
+  };
   # global packages
   environment.systemPackages = with pkgs; [
     # This program allows you read and control device brightness
