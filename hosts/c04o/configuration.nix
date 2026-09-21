@@ -115,9 +115,9 @@
             owner = "Supreeeme";
             repo = "xwayland-satellite";
             rev = "v${version}";
-            hash = "sha256-1111111111111111111111111111111111111111111=";
+            hash = "sha256-BUE41HjLIGPjq3U8VXPjf8asH8GaMI7FYdgrIHKFMXA=";
           };
-          cargoHash = "sha256-2222222222222222222222222222222222222222222=";
+          cargoHash = "sha256-16L6gsvze+m7XCJlOA1lsPNELE3D364ef2FTdkh0rVY=";
         });
       })
     ];
