@@ -1,5 +1,6 @@
 {...}: {
   programs = {
+    # modern ls
     eza = {
       enable = true;
       enableFishIntegration = true;
@@ -8,6 +9,12 @@
       extraOptions = [
         "--group-directories-first"
       ];
+    };
+
+    # smarter cd
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
     };
 
     fish = {
