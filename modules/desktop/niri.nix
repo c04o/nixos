@@ -52,7 +52,7 @@
           }
 
           border {
-              width 1.5
+              width 1.4
               active-color "#cba6f7"
               inactive-color "#585b70"
           }
@@ -62,11 +62,7 @@
           }
 
           shadow {
-              on
-              softness 30
-              spread 5
-              offset x=0 y=0
-              color "#00000070"
+              off
           }
       }
 
@@ -93,7 +89,7 @@
       }
 
       window-rule {
-          geometry-corner-radius 12
+          geometry-corner-radius 0
           clip-to-geometry true
       }
 
@@ -111,7 +107,7 @@
           match app-id="com.mitchellh.ghostty"
           draw-border-with-background false
           background-effect {
-              blur true
+              blur false
           }
       }
 
