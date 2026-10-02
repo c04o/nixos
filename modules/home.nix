@@ -53,7 +53,7 @@
     enable = true;
     defaultFonts = {
       sansSerif = ["Inter"];
-      monspace = ["JetBrainsMono Nerd Font"];
+      monospace = ["JetBrainsMono Nerd Font"];
     };
   };
 
