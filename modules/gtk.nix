@@ -10,5 +10,10 @@
   gtk = {
     enable = true;
     gtk4.theme = null; #silence the 26.05 stateVersion warning
+    font = {
+      name = "Inter";
+      package = pkgs.inter;
+      size = 12;
+    };
   };
 }

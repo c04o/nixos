@@ -49,7 +49,13 @@
     flavor = "mocha";
   };
 
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      sansSerif = ["Inter"];
+      monspace = ["JetBrainsMono Nerd Font"];
+    };
+  };
 
   programs.home-manager.enable = true;
 }
