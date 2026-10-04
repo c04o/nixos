@@ -9,7 +9,7 @@
     settings = {
       # fonts
       font-family = "JetBrainsMono Nerd Font";
-      font-size = 12;
+      font-size = 11;
 
       # ui & window architecture
       window-decoration = false; # removes borders and title bars
