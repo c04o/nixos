@@ -34,6 +34,7 @@
       mpv
       nautilus
       pavucontrol
+      fd
       ripgrep
       yazi
       zathura
