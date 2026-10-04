@@ -112,6 +112,8 @@
       }
 
       binds {
+          // what i use in dank material shell as an app launcher
+          Mod+Space { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
           Mod+Return { spawn "ghostty"; }
           Mod+B { spawn "helium"; }
           Mod+F { spawn "nautilus"; }
