@@ -68,12 +68,15 @@
         ns = "nix search nixpkgs";
         aj = "alejandra .";
 
+        # list
+        ls = "eza -1"; # one file per line
+        ll = "eza -l --header --git"; # long format
+        la = "eza -la --header --git"; # long format + hidden files
+        lt = "eza --tree --level=2"; # file tree
+
         # dir nav
         ".." = "cd ..";
         "..." = "cd ../..";
-        ls = "eza --icons=auto --group-directories-first";
-        e = "eza -l --header --icons=auto --git --group-directories-first --tree --level=2";
-        ee = "eza -la --header --icons=auto --git --group-directories-first";
 
         # git
         g = "git";
