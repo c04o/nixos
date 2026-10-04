@@ -74,7 +74,9 @@
         la = "eza -la --header --git"; # long format + hidden files
         lt = "eza --tree --level=2"; # file tree
 
-        # dir nav
+        # directory navigation
+        cd = "z"; # smarter cd
+        cdi = "zi"; # interactive cd using fzf
         ".." = "cd ..";
         "..." = "cd ../..";
 
