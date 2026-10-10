@@ -7,7 +7,7 @@
           ELECTRON_OZONE_PLATFORM_HINT "auto"
       }
 
-      // to GPG entropy
+      // for GPG entropy
       spawn-at-startup "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
 
       // propagate environment to systemd so dms launches steam correctly (maybe?)
