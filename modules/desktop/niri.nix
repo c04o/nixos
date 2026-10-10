@@ -51,15 +51,20 @@
               proportion 1.0
           }
 
-          border {
-              width 1.4
+          focus-ring {
+              // off
+              width 1.5
               active-color "#cba6f7"
               inactive-color "#585b70"
           }
 
-          focus-ring {
+          border {
               off
+              width 1.5
+              active-color "#cba6f7"
+              inactive-color "#585b70"
           }
+
 
           shadow {
               off
