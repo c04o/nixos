@@ -104,10 +104,12 @@
       }
 
       window-rule {
+          match app-id="com.danklinux.dms"
           match app-id="com.mitchellh.ghostty"
           draw-border-with-background false
           background-effect {
-              blur false
+              blur true
+              xray false // consider windows below to blur
           }
       }
 
@@ -144,6 +146,12 @@
           Shift+Print { screenshot write-to-disk=false; }
           Ctrl+Shift+Print { screenshot-screen write-to-disk=false; }
           Alt+Shift+Print { screenshot-window write-to-disk=false; }
+
+          // scroll (wheelscroll)
+          Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+          Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+          Mod+WheelScrollRight { focus-column-right; }
+          Mod+WheelScrollLeft { focus-column-left; }
 
           // scroll (vim-motions)
           Mod+H { focus-column-left; }
