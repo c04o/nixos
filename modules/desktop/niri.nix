@@ -112,6 +112,9 @@
       }
 
       binds {
+          // toggle so apps like virtual machines don't hijack your session
+          Mod+Escape { toggle-keyboard-shortcuts-inhibit; }
+
           // what i use in dank material shell as an app launcher
           Mod+Space { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
 
