@@ -103,13 +103,20 @@
           default-floating-position x=10 y=10 relative-to="bottom-right"
       }
 
+      layer-rule {
+        match namespace=r#"^dms:.*"#
+
+        background-effect {
+          blur true
+          xray false // blur windows below
+         }
+      }
+
       window-rule {
-          match app-id="com.danklinux.dms"
           match app-id="com.mitchellh.ghostty"
           draw-border-with-background false
           background-effect {
               blur true
-              xray false // consider windows below to blur
           }
       }
 
