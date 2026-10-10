@@ -143,7 +143,6 @@
           Alt+Print { screenshot-window; }
 
           // screenshot & copy to clipboard
-          Shift+Print { screenshot write-to-disk=false; }
           Ctrl+Shift+Print { screenshot-screen write-to-disk=false; }
           Alt+Shift+Print { screenshot-window write-to-disk=false; }
 
