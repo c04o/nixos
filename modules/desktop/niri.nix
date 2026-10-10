@@ -52,14 +52,14 @@
           }
 
           focus-ring {
-              // off
+              off
               width 1.5
               active-color "#cba6f7"
               inactive-color "#585b70"
           }
 
           border {
-              off
+              // off
               width 1.5
               active-color "#cba6f7"
               inactive-color "#585b70"
