@@ -114,44 +114,60 @@
       binds {
           // what i use in dank material shell as an app launcher
           Mod+Space { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-          Mod+Return { spawn "ghostty"; }
-          Mod+B { spawn "helium"; }
-          Mod+F { spawn "nautilus"; }
-          Mod+Shift+E { quit; }
+
+          // other apps
+          Mod+Return { spawn "ghostty"; } // terminal emulator
+          Mod+B { spawn "helium"; } // web browser
+          Mod+F { spawn "nautilus"; } // file explorer
+
+          Mod+Shift+E { quit; } // quit niri
           Mod+Q { close-window; }
           Mod+Shift+P { power-off-monitors; }
-          Mod+Shift+Slash { show-hotkey-overlay; }
+          Mod+Shift+Slash { show-hotkey-overlay; } // keybinds list
 
+          // volume/brightness keys
           XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
           XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
           XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
           XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "set" "+10%"; }
           XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
 
-          Print { spawn "niri" "msg" "action" "screenshot"; }
-          Ctrl+Print { spawn "niri" "msg" "action" "screenshot-screen"; }
-          Alt+Print { spawn "niri" "msg" "action" "screenshot-window"; }
+          Print { spawn "niri" "msg" "action" "screenshot"; } // screenshot crop selector
+          Ctrl+Print { spawn "niri" "msg" "action" "screenshot-screen"; } // screenshot everything
+          Alt+Print { spawn "niri" "msg" "action" "screenshot-window"; } // screenshot only window
 
+          // scroll (vim-motions)
           Mod+H { focus-column-left; }
           Mod+L { focus-column-right; }
           Mod+J { focus-window-or-workspace-down; }
           Mod+K { focus-window-or-workspace-up; }
 
+          // scroll (arrow keys)
           Mod+Left { focus-column-left; }
           Mod+Right { focus-column-right; }
           Mod+Down { focus-window-or-workspace-down; }
           Mod+Up { focus-window-or-workspace-up; }
 
+          // move window directionally (vim-motions)
           Mod+Shift+H { move-column-left; }
           Mod+Shift+L { move-column-right; }
           Mod+Shift+J { move-window-down-or-to-workspace-down; }
           Mod+Shift+K { move-window-up-or-to-workspace-up; }
 
+          // move window directionally (arrow keys)
           Mod+Shift+Left { move-column-left; }
           Mod+Shift+Right { move-column-right; }
           Mod+Shift+Down { move-window-down-or-to-workspace-down; }
           Mod+Shift+Up { move-window-up-or-to-workspace-up; }
 
+          // move window to workspace (numbered)
+          Mod+Shift+1 { move-column-to-workspace 1; }
+          Mod+Shift+2 { move-column-to-workspace 2; }
+          Mod+Shift+3 { move-column-to-workspace 3; }
+          Mod+Shift+4 { move-column-to-workspace 4; }
+          Mod+Shift+5 { move-column-to-workspace 5; }
+
+          // move to workspace (numbered)
           Mod+1 { focus-workspace 1; }
           Mod+2 { focus-workspace 2; }
           Mod+3 { focus-workspace 3; }
