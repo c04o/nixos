@@ -132,9 +132,15 @@
           XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "set" "+10%"; }
           XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
 
-          Print { spawn "niri" "msg" "action" "screenshot"; } // screenshot crop selector
-          Ctrl+Print { spawn "niri" "msg" "action" "screenshot-screen"; } // screenshot everything
-          Alt+Print { spawn "niri" "msg" "action" "screenshot-window"; } // screenshot only window
+          // screenshot, copy to clipboard & save to disk
+          Print { screenshot; }
+          Ctrl+Print { screenshot-screen; }
+          Alt+Print { screenshot-window; }
+
+          // screenshot & copy to clipboard
+          Shift+Print { screenshot write-to-disk=false; }
+          Ctrl+Shift+Print { screenshot-screen write-to-disk=false; }
+          Alt+Shift+Print { screenshot-window write-to-disk=false; }
 
           // scroll (vim-motions)
           Mod+H { focus-column-left; }
