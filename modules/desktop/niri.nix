@@ -107,7 +107,7 @@
         match namespace=r#"^dms:.*"#
 
         background-effect {
-          blur true
+          // blur true
           xray false // blur windows below
          }
       }
