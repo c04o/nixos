@@ -128,7 +128,7 @@
           Mod+Space { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
 
           // other apps
-          Mod+Return { spawn "ghostty"; } // terminal emulator
+          Mod+Return { spawn "foot"; } // terminal emulator
           Mod+B { spawn "helium"; } // web browser
           Mod+F { spawn "nautilus"; } // file explorer
 
