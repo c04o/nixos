@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.foot = {
     enable = true;
     # background foot daemon for quicker startups
@@ -27,7 +27,7 @@
 
       url = {
         # detect links on hover or with ctrl+shift+o
-        launch = "${pkgs.xdg-utils}/bin/xdg-open \${url}";
+        launch = "${pkgs.xdg-utils}/bin/xdg-open \${url}"; # look for default browser
         osc8-underline = "url-mode";
       };
     };
