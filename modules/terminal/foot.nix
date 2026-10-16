@@ -8,8 +8,10 @@
         # font & size
         font = "JetBrainsMono Nerd Font:size=11";
         pad = "8x8"; # internal padding
-        alpha = "0.9"; # transparency
       };
+
+      colors.alpha = "0.9"; # transparency
+
       # other sane defaults
       scrollback = {
         lines = 10000;
