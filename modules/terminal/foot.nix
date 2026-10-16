@@ -10,7 +10,7 @@
         pad = "8x8"; # internal padding
       };
 
-      colors.alpha = "0.9"; # transparency
+      colors-dark.alpha = "0.9"; # backgrond transparency
 
       # other sane defaults
       scrollback = {
