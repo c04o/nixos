@@ -113,7 +113,7 @@
       }
 
       window-rule {
-          match app-id="com.mitchellh.ghostty"
+          match app-id="foot"
           draw-border-with-background false
           background-effect {
               blur true
