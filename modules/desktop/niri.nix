@@ -211,14 +211,11 @@
           Mod+M { maximize-column; }
           Mod+C { center-column; }
           Mod+V { toggle-window-floating; }
-          Mod+W { toggle-column-tabbed-display; }
           Mod+R { switch-preset-column-width; }
           Mod+Minus { set-column-width "-10%"; }
           Mod+Equal { set-column-width "+10%"; }
           Mod+Shift+F { fullscreen-window; }
 
-          Mod+Comma { consume-window-into-column; }
-          Mod+Period { expel-window-from-column; }
       }
   '';
 }
