@@ -183,6 +183,14 @@
           Mod+Shift+Down { move-window-down-or-to-workspace-down; }
           Mod+Shift+Up { move-window-up-or-to-workspace-up; }
 
+          // tab controls
+          // toggle current column between standard tiling and tabbed mode
+          Mod+W { toggle-column-tabbed-display; }
+          // consume the window to the right into the current tab
+          Mod+Comma { consume-window-into-column; }
+          // expel the active tabbed window out into its own column
+          Mod+Period { expel-window-from-column; }
+
           // move window to workspace (numbered)
           Mod+Shift+1 { move-column-to-workspace 1; }
           Mod+Shift+2 { move-column-to-workspace 2; }
