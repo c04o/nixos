@@ -65,6 +65,9 @@
               inactive-color "#585b70"
           }
 
+          tab-indicator {
+              place-within-column
+          }
 
           shadow {
               on
