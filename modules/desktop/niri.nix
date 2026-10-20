@@ -40,7 +40,7 @@
       }
 
       layout {
-          gaps 0
+          gaps 8
           center-focused-column "never"
 
           default-column-width { proportion 0.5; }
