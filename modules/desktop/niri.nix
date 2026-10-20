@@ -70,7 +70,12 @@
           }
 
           shadow {
-              on
+            on
+            softness 24
+            spread 5
+            offset x=0 y=0
+            color "#00000070"
+            // inactive-color "#00000040"
           }
       }
 
