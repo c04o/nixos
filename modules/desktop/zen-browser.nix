@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.zen-browser.homeModules.beta
     # inputs.zen-browser.homeModules.twilight
@@ -14,8 +9,4 @@
     enable = true;
     setAsDefaultBrowser = true;
   };
-
-  home.packages = [
-    inputs.zen-browser.packages."${pkgs.system}".default
-  ];
 }
