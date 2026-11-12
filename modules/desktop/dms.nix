@@ -18,6 +18,8 @@
     enableCalendarEvents = true; # Calendar integration (khal)
 
     plugins = {
+      # Calculator for DMS launcher
+      calculator.enable = true;
       # Emoji & Unicode Launcher plugin for DankMaterialShell
       emojiLauncher.enable = true;
     };

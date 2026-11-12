@@ -34,6 +34,7 @@
       mpv
       nautilus
       pavucontrol
+      fd
       ripgrep
       yazi
       zathura
@@ -49,7 +50,13 @@
     flavor = "mocha";
   };
 
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      sansSerif = ["Inter"];
+      monospace = ["JetBrainsMono Nerd Font"];
+    };
+  };
 
   programs.home-manager.enable = true;
 }
